@@ -12,10 +12,15 @@ A live telemetry ingestion and dashboard package designed for UTSM vehicle and d
 
 ### Run Commands
 git switch master
+
 git pull
+
 python -m venv .venv
+
 .venv\Scripts\Activate.ps1
+
 python -m pip install -r requirements.txt
 
 $env:UTSM_TELEMETRY_API_KEY = "SAME_KEY_USED_BY_THE_WROVER"
+
 python -m uvicorn live_dashboard.app:app --host 0.0.0.0 --port 8000
